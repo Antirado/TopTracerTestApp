@@ -1,6 +1,7 @@
 package com.example.toptracertest
 
 import android.view.View
+import android.webkit.WebView
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -13,4 +14,9 @@ fun setGoneUnless(view: View, isVisible: Boolean) {
 @BindingAdapter("gifUrl")
 fun setGif(view: ImageView, url: String) {
     if (url.isNotBlank()) Glide.with(view.context).load(url).asGif().into(view)
+}
+
+@BindingAdapter("url")
+fun setGif(view: WebView, url: String) {
+    if (url.isNotBlank()) view.loadUrl(url)
 }

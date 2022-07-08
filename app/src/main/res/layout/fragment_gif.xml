@@ -11,62 +11,70 @@
 
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ProgressBar
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:indeterminate="true"
-            app:goneUnless="@{viewModel.isLoadingState}" />
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:goneUnless="@{viewModel.isSuccessState}">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/welcome_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="Congratulations for login in, here's your trendy GIF" />
+            <ProgressBar
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                app:goneUnless="@{viewModel.isLoadingState}" />
 
-            <ImageView
-                android:id="@+id/gif"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_marginBottom="24dp"
-                tools:background="@color/design_default_color_error" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:goneUnless="@{viewModel.isSuccessState}">
 
-            <TextView
-                android:id="@+id/author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@{viewModel.author}"
-                tools:text="Author of bla bla" />
+                <TextView
+                    android:id="@+id/welcome_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Congratulations for login in, here's your trendy GIF" />
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@{viewModel.title}"
-                tools:text="Title of bla bla" />
+                <WebView
+                    android:id="@+id/gif"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="24dp"
+                    app:url="@{viewModel.url}"
+                    tools:background="@color/design_default_color_error" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.onLogoutClicked()}"
-                android:text="Log out!" />
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@{viewModel.author}"
+                    tools:text="Author of bla bla" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@{viewModel.title}"
+                    tools:text="Title of bla bla" />
 
-    </FrameLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.onLogoutClicked()}"
+                    android:text="Log out!" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </ScrollView>
+
 
 </layout>

@@ -37,14 +37,7 @@ class GifFragment : Fragment() {
         subscribeToLifecycle(viewModel.command) {
             when (it) {
                 GifViewModel.Command.Logout -> findNavController().navigate(R.id.action_login_to_gif)
-                is GifViewModel.Command.LoadGif -> loadGif(it.url)
             }
-        }
-    }
-
-    private fun loadGif(url: String) {
-        binding.let {
-            Glide.with(activity).load(url).asGif().into(binding.gif)
         }
     }
 

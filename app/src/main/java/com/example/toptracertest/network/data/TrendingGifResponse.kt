@@ -11,7 +11,7 @@ data class RandomGifResponse(
 )
 
 data class Data(
-    @field:Json(name = "url")
+    @field:Json(name = "embed_url")
     val url: String?,
     @field:Json(name = "username")
     val username: String?,

@@ -28,7 +28,6 @@ class GifViewModel(private val repository: GifRepository) : ViewModel() {
 
     sealed class Command {
         object Logout : Command()
-        data class LoadGif(val url: String) : Command()
     }
 
     private val _command = MutableSharedFlow<Command>()
@@ -53,8 +52,7 @@ class GifViewModel(private val repository: GifRepository) : ViewModel() {
         viewState.emit(State.LOADED)
         _author.emit(gif.author)
         _title.emit(gif.title)
-        _command.emit(Command.LoadGif(gif.url))
-        //_url.emit(gif.url)
+        _url.emit(gif.url)
     }
     fun onLogoutClicked() {
         viewModelScope.launch {
