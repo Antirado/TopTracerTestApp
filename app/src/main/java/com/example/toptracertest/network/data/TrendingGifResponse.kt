@@ -33,5 +33,3 @@ fun RandomGifResponse.toGif() = Gif(
     author = data.first().username ?: "",
     title = data.first().title ?: ""
 )
-
-//fun RandomGifResponse.toGif() = Gif(url = meta.url ?: "", author = meta.username ?: "", title = meta.title.toString() ?: "")

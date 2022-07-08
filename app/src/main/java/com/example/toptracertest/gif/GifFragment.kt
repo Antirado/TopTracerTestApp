@@ -44,7 +44,7 @@ class GifFragment : Fragment() {
 
     private fun loadGif(url: String) {
         binding.let {
-            Glide.with(activity).load(url).asGif().fallback(R.drawable.ic_launcher_background).into(binding.gif)
+            Glide.with(activity).load(url).asGif().into(binding.gif)
         }
     }
 

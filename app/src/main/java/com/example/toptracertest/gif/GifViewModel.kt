@@ -56,4 +56,9 @@ class GifViewModel(private val repository: GifRepository) : ViewModel() {
         _command.emit(Command.LoadGif(gif.url))
         //_url.emit(gif.url)
     }
+    fun onLogoutClicked() {
+        viewModelScope.launch {
+            _command.emit(Command.Logout)
+        }
+    }
 }
