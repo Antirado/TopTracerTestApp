@@ -1,4 +1,4 @@
-package com.example.toptracertest.gif
+package com.example.toptracertest.uifeatures.gif
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

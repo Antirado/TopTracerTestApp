@@ -1,4 +1,4 @@
-package com.example.toptracertest.gif
+package com.example.toptracertest.uifeatures.gif
 
 import com.example.toptracertest.appdata.Gif
 import com.example.toptracertest.network.GiphyApi

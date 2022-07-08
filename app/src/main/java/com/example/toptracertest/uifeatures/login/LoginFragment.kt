@@ -1,4 +1,4 @@
-package com.example.toptracertest.login
+package com.example.toptracertest.uifeatures.login
 
 import android.app.AlertDialog
 import android.os.Bundle
